@@ -27,7 +27,7 @@ get "/sign_up" do
   erb :sign_up
 end
 
-get "/signin" do
+get "/sign_in" do
   erb :sign_in
 end
 
@@ -47,9 +47,11 @@ post "/sign-in" do
   params.inspect
   @user = User.where(username: params[:username]).first
   if @user && @user.password == params[:password]
-    # session[:user_id] = @user.id
+    session[:user_id] = @user.id
+    flash[:notice] = "Welcome, #{@user.username}!"
     redirect "/"
   else
-    redirect "/post"
+    flash[:notice] = "Your username and password do not match, please try again."
+    redirect "/sign_in"
   end
 end

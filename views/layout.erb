@@ -7,13 +7,22 @@
     <title></title>
   </head>
   <body>
+    <header>
       <nav>
         <a href="/">home</a>
         <a href="/profile">profile</a>
         <a href="/post">post</a>
         <a href="/sign_up">sign up</a>
         <a href="/sign_in">sign in</a>
-      </nav>
+      </nav>  
+    </header>
+
+      <div class="flashmessage">
+        <% if flash[:notice] %>
+        <%= flash[:notice] %>
+        <% end %>
+      </div>
+
     <%= yield %>
 
     <footer></footer>
