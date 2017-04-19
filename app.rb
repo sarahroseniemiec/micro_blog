@@ -1,4 +1,10 @@
 require "sinatra"
+require "sinatra/activerecord"
+require "./models"
+require "bundler/setup"
+require "sinatra/flash"
+
+set :database, "sqlite3:microblog.sqlite3"
 
 get "/" do
   "hello world"
