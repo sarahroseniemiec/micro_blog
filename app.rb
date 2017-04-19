@@ -7,7 +7,7 @@ require "sinatra/flash"
 set :database, "sqlite3:microblog.sqlite3"
 
 get "/" do
-  "hello world"
+  erb :homepage
 end
 
 get "/profile" do
@@ -22,6 +22,12 @@ get "/post" do
   erb :post
 end
 
-get "/feed" do
-  erb :feed
+get "/sign_up" do
+  erb :sign_up
+end
+
+post "/sign-up" do
+  params.inspect
+  User.create(username: params[:username], password: params[:password])
+  redirect "/"
 end
