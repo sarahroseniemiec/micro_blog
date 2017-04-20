@@ -1,10 +1,10 @@
 homepage
 
 <ul>
-<% @feed.reverse.each do |f| %>
-  <li> Time: <%= f.date %>  </li>
-  <li> User: <%= f.user_id%> </li>
-  <li> Post: <%= f.content %> </li>
+<% @feed.reverse.each do |post| %>
+  <li> Time: <%= post.date %>  </li>
+  <li> User: <%= post.user.username %> </li>
+  <li> Post: <%= post.content %> </li>
   <br>
   <% end %>
 </ul>

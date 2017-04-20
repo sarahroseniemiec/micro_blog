@@ -10,7 +10,6 @@ set :sessions, true
 
 get "/" do
   @feed = Post.last(10)
-  # @userpost = User.find_by()
   erb :homepage
 end
 
