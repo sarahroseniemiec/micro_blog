@@ -14,6 +14,7 @@ end
 
 get "/profile" do
   @posts = User.find(session[:user_id]).posts
+  @profile = User.find(session[:user_id]).profile
   erb :profile
   # redirect "/profile:id"
 end
@@ -87,6 +88,12 @@ post "/change-account" do
   params.inspect
   @userupdate = User.find(session[:user_id])
   @userupdate.update(username: params[:username], password: params[:password])
+  redirect "/edit"
+end
+
+post "/edit-profile" do
+  params.inspect
+  Profile.create(state:params[:state], country:params[:country], user_id: session[:user_id])
   redirect "/edit"
 end
 
