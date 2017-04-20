@@ -20,6 +20,11 @@ post "/sign-in" do
   if @user && @user.password == params[:password]
     session[:user_id] = @user.id
     flash[:notice] = "Welcome, #{@user.username}!"
+    Profile.create(
+    state: "",
+    country: "",
+    user_id: session[:user_id]
+    )
     redirect "/"
   else
     flash[:notice] = "Your username and password do not match, please try again."
@@ -33,8 +38,9 @@ get "/profile" do
 end
 
 get "/profile/:id" do
-  @posts = User.find(session[:user_id]).posts
-  @profile = User.find(session[:user_id]).profile
+  @profile = Profile.find_by(user_id: params[:id])
+  puts "yyoooooo", @profile.inspect
+  @posts = User.find(params[:id]).posts
   erb :profile
 end
 
@@ -96,23 +102,13 @@ post "/change-account" do
   redirect "/edit"
 end
 
-post "/create-profile" do
+post "/update-profile" do
   params.inspect
-  @profile = Profile.where(user_id:session[:user_id])
-  if @profile
     Profile.update(
     state: params[:state],
     country: params[:country],
     user_id: session[:user_id]
     )
-  else
-    Profile.create(
-    state: params[:state],
-    country: params[:country],
-    user_id: session[:user_id]
-    )
-  end
-
   redirect "/edit"
 end
 #
