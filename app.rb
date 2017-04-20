@@ -26,16 +26,9 @@ post "/sign-in" do
     redirect "/sign_in"
   end
 end
-# .id.to_s
- # "/profile_view/"+ @profile.id.to_s
-# get "/profile" do
-#
-# end
+
 
 get "/profile" do
-  # @posts = User.find(session[:user_id]).posts
-  # @profile = User.find(session[:user_id]).profile
-  # erb :profile
   redirect "/profile/" + session[:user_id].to_s
 end
 
