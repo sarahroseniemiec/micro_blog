@@ -20,11 +20,6 @@ post "/sign-in" do
   if @user && @user.password == params[:password]
     session[:user_id] = @user.id
     flash[:notice] = "Welcome, #{@user.username}!"
-    Profile.create(
-    state: "",
-    country: "",
-    user_id: session[:user_id]
-    )
     redirect "/"
   else
     flash[:notice] = "Your username and password do not match, please try again."
@@ -67,6 +62,14 @@ post "/sign-up" do
   User.create(
   username: params[:username],
   password: params[:password]
+  )
+  @user = User.where(username: params[:username]).first
+  session[:user_id] = @user.id
+  flash[:notice] = "Welcome, #{@user.username}!"
+  Profile.create(
+  state: params[:state],
+  country: params[:country],
+  user_id: session[:user_id]
   )
   redirect "/"
 end
