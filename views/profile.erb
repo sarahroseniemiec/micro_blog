@@ -1,7 +1,8 @@
-profile
+<h1>Profile</h1>
 
-
-<% @posts.each do |post| %>
-Time: <%= post.date %>
-Post: <%= post.content %>
-<% end %>
+<ul>
+  <% @posts.reverse.each do |post| %>
+  <li> Time: <%= post.date %> </li>
+  <li> Post: <%= post.content %>< /li>
+  <% end %>
+</ul>

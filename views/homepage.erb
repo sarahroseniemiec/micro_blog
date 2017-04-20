@@ -1,6 +1,9 @@
 homepage
+
+<ul>
 <% @feed.reverse.each do |f| %>
-Time: <%= f.date %>
-Post: <%= f.content %>
-User: <%= f.user%>
-<% end %>
+  <li> Time: <%= f.date %>  </li>
+  <li> User: <%= f.user %> </li>
+  <li> Post: <%= f.content %> </li>
+  <% end %>
+</ul>

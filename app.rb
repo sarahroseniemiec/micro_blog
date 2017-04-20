@@ -41,13 +41,20 @@ end
 
 post "/sign-up" do
   params.inspect
-  User.create(username: params[:username], password: params[:password])
+  User.create(
+  username: params[:username],
+  password: params[:password]
+  )
   redirect "/"
 end
 
 post "/create-post" do
   params.inspect
-  Post.create(date: Date.today, content: params[:content], user_id: session[:user_id])
+  Post.create(
+  date: DateTime.now,
+  content: params[:content],
+  user_id: session[:user_id]
+  )
   redirect "/post"
 end
 
@@ -76,6 +83,12 @@ get "/delete_account" do
   redirect "/"
 end
 
+post "/change-account" do
+  params.inspect
+  @userupdate = User.find(session[:user_id])
+  @userupdate.update(username: params[:username], password: params[:password])
+  redirect "/edit"
+end
 
 # def current_user
 #   if session[:user_id]
