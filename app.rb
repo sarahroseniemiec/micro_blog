@@ -7,22 +7,45 @@ require "sinatra/flash"
 set :database, "sqlite3:microblog.sqlite3"
 set :sessions, true
 
+
 get "/" do
   @feed = Post.last(10)
+  # @userpost = User.find_by()
   erb :homepage
 end
 
+post "/sign-in" do
+  params.inspect
+  @user = User.where(username: params[:username]).first
+  if @user && @user.password == params[:password]
+    session[:user_id] = @user.id
+    flash[:notice] = "Welcome, #{@user.username}!"
+    redirect "/"
+  else
+    flash[:notice] = "Your username and password do not match, please try again."
+    redirect "/sign_in"
+  end
+end
+# .id.to_s
+ # "/profile_view/"+ @profile.id.to_s
+# get "/profile" do
+#
+# end
+
 get "/profile" do
+  # @posts = User.find(session[:user_id]).posts
+  # @profile = User.find(session[:user_id]).profile
+  # erb :profile
+  redirect "/profile/" + session[:user_id].to_s
+end
+
+get "/profile/:id" do
   @posts = User.find(session[:user_id]).posts
   @profile = User.find(session[:user_id]).profile
   erb :profile
-  # redirect "/profile:id"
 end
 
-# get "/profile:id" do
-#   @posts = User.find(session[:user_id]).posts
-#   erb :profile
-# end
+
 
 get "/edit" do
   erb :edit
@@ -59,18 +82,7 @@ post "/create-post" do
   redirect "/post"
 end
 
-post "/sign-in" do
-  params.inspect
-  @user = User.where(username: params[:username]).first
-  if @user && @user.password == params[:password]
-    session[:user_id] = @user.id
-    flash[:notice] = "Welcome, #{@user.username}!"
-    redirect "/"
-  else
-    flash[:notice] = "Your username and password do not match, please try again."
-    redirect "/sign_in"
-  end
-end
+
 
 get "/sign_out" do
   session[:user_id] = nil
@@ -110,7 +122,7 @@ post "/create-profile" do
 
   redirect "/edit"
 end
-
+#
 # def current_user
 #   if session[:user_id]
 #     User.find(session[:user_id])
