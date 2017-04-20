@@ -8,6 +8,7 @@ set :database, "sqlite3:microblog.sqlite3"
 set :sessions, true
 
 get "/" do
+  @feed = Post.last(10)
   erb :homepage
 end
 
