@@ -33,7 +33,6 @@ end
 
 get "/profile/:id" do
   @profile = Profile.find_by(user_id: params[:id])
-  puts "yyoooooo", @profile.inspect
   @posts = User.find(params[:id]).posts
   erb :profile
 end
@@ -75,8 +74,9 @@ end
 
 post "/create-post" do
   params.inspect
+  @posttime = DateTime.now.strftime"%m/%d/%Y %H:%M"
   Post.create(
-  date: DateTime.now,
+  date: @posttime,
   content: params[:content],
   user_id: session[:user_id]
   )
