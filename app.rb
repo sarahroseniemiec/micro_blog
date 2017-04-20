@@ -91,9 +91,23 @@ post "/change-account" do
   redirect "/edit"
 end
 
-post "/edit-profile" do
+post "/create-profile" do
   params.inspect
-  Profile.create(state:params[:state], country:params[:country], user_id: session[:user_id])
+  @profile = Profile.where(user_id:session[:user_id])
+  if @profile
+    Profile.update(
+    state: params[:state],
+    country: params[:country],
+    user_id: session[:user_id]
+    )
+  else
+    Profile.create(
+    state: params[:state],
+    country: params[:country],
+    user_id: session[:user_id]
+    )
+  end
+
   redirect "/edit"
 end
 
