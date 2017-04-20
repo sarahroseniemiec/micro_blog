@@ -12,6 +12,7 @@ get "/" do
 end
 
 get "/profile" do
+  @posts = User.find(session[:user_id]).posts
   erb :profile
 end
 
@@ -39,7 +40,7 @@ end
 
 post "/create-post" do
   params.inspect
-  Post.create(content: params[:content])
+  Post.create(date: Date.today, content: params[:content], user_id: session[:user_id])
   redirect "/post"
 end
 

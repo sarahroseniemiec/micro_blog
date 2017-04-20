@@ -1,1 +1,7 @@
 profile
+
+
+<% @posts.each do |post| %>
+Time: <%= post.date %>
+Content: <%= post.content %>
+<% end %>
