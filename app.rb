@@ -14,7 +14,13 @@ end
 get "/profile" do
   @posts = User.find(session[:user_id]).posts
   erb :profile
+  # redirect "/profile:id"
 end
+
+# get "/profile:id" do
+#   @posts = User.find(session[:user_id]).posts
+#   erb :profile
+# end
 
 get "/edit" do
   erb :edit
@@ -61,3 +67,17 @@ get "/sign_out" do
   session[:user_id] = nil
   redirect "/"
 end
+
+get "/delete_account" do
+  User.find(session[:user_id]).destroy
+  session[:user_id] = nil
+  flash[:notice] = "Your account has been deleted."
+  redirect "/"
+end
+
+
+# def current_user
+#   if session[:user_id]
+#     User.find(session[:user_id])
+#   end
+# end
