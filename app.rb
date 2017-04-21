@@ -100,7 +100,10 @@ end
 post "/change-account" do
   params.inspect
   @userupdate = User.find(session[:user_id])
-  @userupdate.update(username: params[:username], password: params[:password])
+  @userupdate.update(
+  username: params[:username],
+  password: params[:password]
+  )
   redirect "/edit"
 end
 
@@ -113,9 +116,8 @@ post "/update-profile" do
     )
   redirect "/edit"
 end
-#
-# def current_user
-#   if session[:user_id]
-#     User.find(session[:user_id])
-#   end
-# end
+
+get "/delete-post/:id" do
+  Post.find(params[:id]).destroy
+  redirect "/profile"
+end
