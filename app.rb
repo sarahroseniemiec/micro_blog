@@ -22,7 +22,7 @@ post "/sign-in" do
     redirect "/"
   else
     flash[:notice] = "Your username and password do not match, please try again."
-    redirect "/sign_in"
+    redirect "/"
   end
 end
 
