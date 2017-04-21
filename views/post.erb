@@ -1,4 +1,4 @@
-<h1>post</h1>
+<h1>Post</h1>
 <h2><%= @profile.user.username %></h2>
 
 <form class="postform" action="/create-post" method="post">
@@ -9,14 +9,14 @@
 
 <div class="postpageposts">
   <% @posts.reverse.each do |post| %>
-  <div>  <%= post.date %> </div>
-  <div> <%= post.content %> </div>
+  <div class="postpagedate">  <%= post.date %> </div>
+  <div class="postpagestuff"> <%= post.content %> </div>
   <div class="editpostbutts">
     <span>
-      <a href="/edituserpost/<%=post.id%>">edit post</a>
+      <a class="editpostbutton" href="/edituserpost/<%=post.id%>"><i class="material-icons">create</i></a>
     </span>
     <span>
-      <a href="/delete-post/<%=post.id%>">delete</a>
+      <a class="editpostbutton" href="/delete-post/<%=post.id%>"> <i class="material-icons">delete</i></a>
     </span>
 </div>
 
