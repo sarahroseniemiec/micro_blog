@@ -12,10 +12,8 @@ post
   <% @posts.reverse.each do |post| %>
   <li> Time: <%= post.date %> </li>
   <li> Post: <%= post.content %> </li>
-  <form class="" action="/edit-post/<%=post.id%>" method="post">
-    <textarea id=edittext name="content" rows="8" cols="30"></textarea>
-    <button type="submit" name="button">edit</button>
-  </form>
+
+  <a href="/edituserpost/<%=post.id%>">edit post</a>
   <a href="/delete-post/<%=post.id%>">delete</a>
 
   <% end %>

@@ -133,3 +133,8 @@ post "/edit-post/:id" do
   )
   redirect "/post"
 end
+
+get "/edituserpost/:id" do
+  @editpost = Post.find(params[:id])
+  erb :edituserpost
+end
