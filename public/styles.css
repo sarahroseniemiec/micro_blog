@@ -1,5 +1,87 @@
 body {
-  color: turquoise;
+  font-family: 'Roboto', sans-serif;
+  color: #232323;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+
+
+.material-icons:hover {
+  color: #ff515d;
+}
+
+#homeicon, #ejecticon, #profileicon, #posticon, #editicon, #signupicon {
+  font-size: 50px;
+}
+
+nav {
+  top: 0px;
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  text-align: center;
+
+}
+
+a {
+  text-decoration: none;
+  color: #232323;
+}
+
+
+.pagemargin {
+  height: 50px;
+}
+
+
+
+
+
+
+
+
+
+/*post page styling*/
+.editpostbutts {
+  text-align: center;
+}
+
+.editpostbutton {
+  padding: 5px;
+  margin: 10px;
+  font-size: 10px;
+}
+
+.postpageposts {
+  text-align: center;
+
+}
+
+.postpagestuff {
+  margin: 10px;
+  font-size: 30px;
+}
+
+.postpagedate {
+  margin: 10px;
+  color: #545454;
+  font-size: 20px;
+}
+
+.postform {
+  text-align: center;
 }
 
 .blogpost {

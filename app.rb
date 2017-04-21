@@ -22,7 +22,7 @@ post "/sign-in" do
     redirect "/"
   else
     flash[:notice] = "Your username and password do not match, please try again."
-    redirect "/sign_in"
+    redirect "/"
   end
 end
 
@@ -103,7 +103,8 @@ end
 
 post "/update-profile" do
   params.inspect
-    Profile.update(
+    @profileupdate = Profile.find_by(user_id: session[:user_id])
+    @profileupdate.update(
     state: params[:state],
     country: params[:country],
     user_id: session[:user_id]

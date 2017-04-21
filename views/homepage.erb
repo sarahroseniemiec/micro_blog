@@ -1,11 +1,21 @@
-homepage
-<div class="blogpost">
-  <ul>
+
+<% if session[:user_id] %>
+
+<% else %>
+
+  <form class="" action="/sign-in" method="post">
+    <input type="text" name="username" value="" placeholder="username">
+    <input type="password" name="password" value="" placeholder="password">
+    <button type="submit" name="button">enter</button>
+  </form>
+
+ <% end %>
+home
+<ul>
   <% @feed.reverse.each do |post| %>
-    <li> <%= post.user.username %> </li>
-    <li> <%= post.date %>  </li>
-    <li> <%= post.content %> </li>
+    <li>  <%= post.user.username %> </li>
+    <li>  <%= post.date %>  </li>
+    <li>  <%= post.content %> </li>
     <br>
-    <% end %>
-  </ul>
-</div>
+  <% end %>
+</ul>

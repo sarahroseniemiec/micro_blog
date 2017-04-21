@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
      rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <script type="text/javascript" src="/main.js"> </script>
     <title></title>
@@ -11,22 +12,14 @@
   <body>
     <header>
       <nav>
-        <a href="/"><i class="material-icons">home</i></a>
+        <a href="/"><i id="homeicon" class="material-icons">home</i></a>
         <% if session[:user_id] %>
-          <a href="/sign_out"><i class="material-icons">eject</i></a>
-          <a href="/profile"><i class="material-icons">account_circle</i></a>
-          <a href="/post"><i class="material-icons">add_circle</i></a>
-          <a href="/edit"><i class="material-icons">settings</i></a>
+          <a href="/sign_out"><i id="ejecticon" class="material-icons">eject</i></a>
+          <a href="/profile"><i id="profileicon" class="material-icons">account_circle</i></a>
+          <a href="/post"><i id="posticon" class="material-icons">add_circle</i></a>
+          <a href="/edit"><i id="editicon" class="material-icons">settings</i></a>
         <% else %>
-
-          <a href="/sign_up"><i class="material-icons">playlist_add</i></a>
-
-        <form class="" action="/sign-in" method="post">
-          <input type="text" name="username" value="" placeholder="username">
-          <input type="password" name="password" value="" placeholder="password">
-          <button type="submit" name="button">enter</button>
-        </form>
-
+          <a href="/sign_up"><i id="signupicon" class="material-icons">playlist_add</i></a>
         <% end %>
       </nav>
     </header>
@@ -35,6 +28,9 @@
         <% if flash[:notice] %>
         <%= flash[:notice] %>
         <% end %>
+      </div>
+      <div class="pagemargin">
+
       </div>
 
     <%= yield %>
