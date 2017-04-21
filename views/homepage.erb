@@ -10,12 +10,13 @@
   </form>
 
  <% end %>
-home
-<ul>
-  <% @feed.reverse.each do |post| %>
-    <li>  <%= post.user.username %> </li>
-    <li>  <%= post.date %>  </li>
-    <li>  <%= post.content %> </li>
-    <br>
-  <% end %>
-</ul>
+<div class="blogpost">
+  <ul>
+    <% @feed.reverse.each do |post| %>
+      <li>  <%= post.user.username %> </li>
+      <li>  <%= post.date %>  </li>
+      <li>  <%= post.content %> </li>
+      <br>
+    <% end %>
+  </ul>
+</div>

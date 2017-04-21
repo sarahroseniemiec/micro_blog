@@ -16,7 +16,9 @@ ul {
   list-style: none;
 }
 
-
+.blogpost {
+  text-align: center;
+}
 
 .material-icons:hover {
   color: #ff515d;
