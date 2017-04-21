@@ -37,8 +37,6 @@ get "/profile/:id" do
   erb :profile
 end
 
-
-
 get "/edit" do
   erb :edit
 end
@@ -51,10 +49,6 @@ end
 
 get "/sign_up" do
   erb :sign_up
-end
-
-get "/sign_in" do
-  erb :sign_in
 end
 
 post "/sign-up" do
@@ -84,8 +78,6 @@ post "/create-post" do
   )
   redirect "/post"
 end
-
-
 
 get "/sign_out" do
   session[:user_id] = nil
