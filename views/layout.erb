@@ -18,8 +18,15 @@
           <a href="/post"><i class="material-icons">add_circle</i></a>
           <a href="/edit"><i class="material-icons">settings</i></a>
         <% else %>
-          <a href="/sign_in"><i class="material-icons">exit_to_app</i></a>
+
           <a href="/sign_up"><i class="material-icons">playlist_add</i></a>
+
+        <form class="" action="/sign-in" method="post">
+          <input type="text" name="username" value="" placeholder="username">
+          <input type="password" name="password" value="" placeholder="password">
+          <button type="submit" name="button">enter</button>
+        </form>
+
         <% end %>
       </nav>
     </header>
