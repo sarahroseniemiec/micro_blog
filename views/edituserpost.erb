@@ -1,12 +1,14 @@
 <h1>Edit post</h1>
-<div class="">
+<div class="editpostdate">
   <%= @editpost.date %>
 </div>
-<div class="">
-  <%= @editpost.content %>
+<div class="editpostcontent"><%= @editpost.content %>
 </div>
-<form class="" action="/edit-post/<%=@editpost.id%>" method="post">
-  <textarea id=edittext name="content" rows="8" cols="30"><%=@editpost.content%>
- </textarea>
-  <button type="submit" name="button">edit</button>
-</form>
+<div class="editpostform">
+  <form class="" action="/edit-post/<%=@editpost.id%>" method="post">
+    <textarea id=edittext name="content" rows="8" cols="30"><%=@editpost.content%>
+    </textarea>
+    <br>
+    <button type="submit" name="button">edit</button>
+  </form>
+</div>

@@ -9,7 +9,7 @@
 
 <div class="profileposts">
   <% @posts.reverse.each do |post| %>
-  <div> <%= post.date %> </div>
-  <div> <%= post.content %> </div>
+  <div class="postpagedate"> <%= post.date %> </div>
+  <div class="postpagestuff"> <%= post.content %> </div>
   <% end %>
 </div>
