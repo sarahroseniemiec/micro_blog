@@ -121,7 +121,7 @@ end
 
 get "/delete-post/:id" do
   Post.find(params[:id]).destroy
-  redirect "/profile"
+  redirect "/post"
 end
 
 post "/edit-post/:id" do
