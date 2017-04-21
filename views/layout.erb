@@ -11,15 +11,15 @@
   <body>
     <header>
       <nav>
-        <a href="/">home</a>
+        <a href="/"><i class="material-icons">home</i></a>
         <% if session[:user_id] %>
-          <a href="/sign_out">sign out</a>
-          <a href="/profile">profile</a>
-          <a href="/post">post</a>
-          <a href="/edit">edit account</a>
+          <a href="/sign_out"><i class="material-icons">eject</i></a>
+          <a href="/profile"><i class="material-icons">account_circle</i></a>
+          <a href="/post"><i class="material-icons">add_circle</i></a>
+          <a href="/edit"><i class="material-icons">settings</i></a>
         <% else %>
-          <a href="/sign_in">sign in</a>
-          <a href="/sign_up">sign up</a>
+          <a href="/sign_in"><i class="material-icons">exit_to_app</i></a>
+          <a href="/sign_up"><i class="material-icons">playlist_add</i></a>
         <% end %>
       </nav>
     </header>
