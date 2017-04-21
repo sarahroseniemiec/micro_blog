@@ -103,7 +103,8 @@ end
 
 post "/update-profile" do
   params.inspect
-    Profile.update(
+    @profileupdate = Profile.find_by(user_id: session[:user_id])
+    @profileupdate.update(
     state: params[:state],
     country: params[:country],
     user_id: session[:user_id]
