@@ -10,7 +10,7 @@
 <div class="postpageposts">
   <% @posts.reverse.each do |post| %>
   <div class="postpagedate">  <%= post.date %> </div>
-  <div class="postpagestuff"> <%= post.content %> </div>
+  <div class="postpagestuff"><%= post.content %> </div>
   <div class="editpostbutts">
     <span>
       <a class="editpostbutton" href="/edituserpost/<%=post.id%>"><i class="material-icons">create</i></a>
