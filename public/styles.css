@@ -131,3 +131,11 @@ a {
 .postform {
   text-align: center;
 }
+
+.blogpost {
+  text-align: center;
+}
+
+ul{
+  list-style-type: none;
+}
