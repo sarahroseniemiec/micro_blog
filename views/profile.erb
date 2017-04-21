@@ -1,13 +1,15 @@
 <h1>Profile</h1>
 <h2><%= @profile.user.username %></h2>
 
-<%= @profile.state %>
-<br>
-<%= @profile.country %>
+<div class="local">
+  <%= @profile.state %>
+  <%= @profile.country %>
+</div>
 
-<ul>
+
+<div class="profileposts">
   <% @posts.reverse.each do |post| %>
-  <li> Time: <%= post.date %> </li>
-  <li> Post: <%= post.content %> </li>
+  <div> <%= post.date %> </div>
+  <div> <%= post.content %> </div>
   <% end %>
-</ul>
+</div>

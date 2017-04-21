@@ -3,19 +3,18 @@
 
 <% else %>
 
-  <form class="" action="/sign-in" method="post">
+  <form class="signin" action="/sign-in" method="post">
     <input type="text" name="username" value="" placeholder="username">
     <input type="password" name="password" value="" placeholder="password">
     <button type="submit" name="button">enter</button>
   </form>
 
  <% end %>
-home
-<ul>
+<h1>Home</h1>
+<div class="feedposts">
   <% @feed.reverse.each do |post| %>
-    <li>  <%= post.date %>  </li>
-    <li>  <%= post.user.username %> </li>
-    <li>  <%= post.content %> </li>
-    <br>
+    <div class="postpagedate">  <%= post.date %>  </div>
+    <div class="feedusername"> <a href="/profile/<%=post.user_id %>"><%= post.user.username %></a>  </div>
+    <div class="postpagestuff">  <%= post.content %> </div>
   <% end %>
-</ul>
+</div>

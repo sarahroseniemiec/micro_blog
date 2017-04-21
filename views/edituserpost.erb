@@ -6,8 +6,7 @@
   <%= @editpost.content %>
 </div>
 <form class="" action="/edit-post/<%=@editpost.id%>" method="post">
-  <textarea id=edittext name="content" rows="8" cols="30">
-  <%=@editpost.content %>
+  <textarea id=edittext name="content" rows="8" cols="30"><%=@editpost.content%>
  </textarea>
   <button type="submit" name="button">edit</button>
 </form>

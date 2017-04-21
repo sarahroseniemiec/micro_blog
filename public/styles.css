@@ -1,3 +1,4 @@
+/*layout styles*/
 body {
   font-family: 'Roboto', sans-serif;
   color: #232323;
@@ -6,17 +7,17 @@ body {
 
 h1 {
   text-align: center;
+  font-size: 50px;
 }
 
 h2 {
   text-align: center;
+  font-size: 40px;
 }
 
 ul {
   list-style: none;
 }
-
-
 
 .material-icons:hover {
   color: #ff515d;
@@ -40,9 +41,50 @@ a {
   color: #232323;
 }
 
-
 .pagemargin {
   height: 50px;
+}
+
+
+
+/*homepage styles*/
+.signin {
+  text-align: center;
+}
+
+.feedposts {
+  text-align: center;
+}
+
+.feedusername {
+  font-size: 25px;
+}
+
+
+
+
+
+
+
+/*profile styles*/
+
+.profileposts {
+  text-align: center;
+  font-size: 20px;
+}
+
+.local {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+
+/*sign up*/
+
+.signupform {
+  text-align: center;
+  font-size: 20px;
 }
 
 
@@ -53,7 +95,13 @@ a {
 
 
 
-/*post page styling*/
+
+
+
+
+
+
+/*post page styles*/
 .editpostbutts {
   text-align: center;
 }
