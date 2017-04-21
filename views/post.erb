@@ -1,5 +1,22 @@
 post
+<h2><%= @profile.user.username %></h2>
+
 <form class="" action="/create-post" method="post">
   <textarea name="content" rows="8" cols="30" maxlength="150"></textarea>
   <button type="submit" name="button">post</button>
 </form>
+
+<h3>Edit a post</h3>
+
+<ul>
+  <% @posts.reverse.each do |post| %>
+  <li> Time: <%= post.date %> </li>
+  <li> Post: <%= post.content %> </li>
+  <form class="" action="/edit-post/<%=post.id%>" method="post">
+    <textarea id=edittext name="content" rows="8" cols="30"></textarea>
+    <button type="submit" name="button">edit</button>
+  </form>
+  <a href="/delete-post/<%=post.id%>">delete</a>
+
+  <% end %>
+</ul>

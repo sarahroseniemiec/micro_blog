@@ -44,6 +44,8 @@ get "/edit" do
 end
 
 get "/post" do
+  @profile = User.find(session[:user_id]).profile
+  @posts = User.find(session[:user_id]).posts
   erb :post
 end
 
@@ -120,4 +122,14 @@ end
 get "/delete-post/:id" do
   Post.find(params[:id]).destroy
   redirect "/profile"
+end
+
+post "/edit-post/:id" do
+  @posttime = DateTime.now.strftime"%m/%d/%Y %H:%M"
+  Post.find(params[:id]).update(
+  date: @posttime,
+  content: params[:content],
+  user_id: session[:user_id]
+  )
+  redirect "/post"
 end

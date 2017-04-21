@@ -1,4 +1,6 @@
 <h1>Profile</h1>
+<h2><%= @profile.user.username %></h2>
+
 <%= @profile.state %>
 <br>
 <%= @profile.country %>
@@ -8,7 +10,5 @@
   <% @posts.reverse.each do |post| %>
   <li> Time: <%= post.date %> </li>
   <li> Post: <%= post.content %> </li>
-  <li><%= post.id %></li>
-  <a href="/delete-post/<%=post.id%>">delete</a>
   <% end %>
 </ul>
