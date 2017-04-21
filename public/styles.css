@@ -1,3 +1,49 @@
 body {
-  color: turquoise;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+ul {
+  list-style: none;
+}
+
+.material-icons {
+  font-size: 50px;
+}
+
+/*.material-icons:hover {
+  color:
+}*/
+
+nav {
+  top: 0px;
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  text-align: center;
+}
+
+.pagemargin {
+  height: 50px;
+}
+
+
+
+
+
+
+
+
+
+/*post page styling*/
+.editpostbutts {
+  text-align: center;
+}
+
+.postpageposts {
+  text-align: center;
+}
+
+.postform {
+  text-align: center;
 }

@@ -1,18 +1,25 @@
 <h1>post</h1>
 <h2><%= @profile.user.username %></h2>
 
-<form class="" action="/create-post" method="post">
+<form class="postform" action="/create-post" method="post">
   <textarea name="content" rows="8" cols="30" maxlength="150"></textarea>
+  <br>
   <button type="submit" name="button">post</button>
 </form>
 
-<ul>
+<div class="postpageposts">
   <% @posts.reverse.each do |post| %>
-  <li> Time: <%= post.date %> </li>
-  <li> Post: <%= post.content %> </li>
+  <div>  <%= post.date %> </div>
+  <div> <%= post.content %> </div>
+  <div class="editpostbutts">
+    <span>
+      <a href="/edituserpost/<%=post.id%>">edit post</a>
+    </span>
+    <span>
+      <a href="/delete-post/<%=post.id%>">delete</a>
+    </span>
+</div>
 
-  <a href="/edituserpost/<%=post.id%>">edit post</a>
-  <a href="/delete-post/<%=post.id%>">delete</a>
 
   <% end %>
-</ul>
+</div>
