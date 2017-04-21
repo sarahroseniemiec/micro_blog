@@ -15,7 +15,7 @@
   <% @feed.reverse.each do |post| %>
 
     <div class="postpagedate">  <%= post.date %>  </div>
-    <div class="feedusername"> <a href="/profile/<%=post.user_id %>"><%= post.user.username %></a>  </div>
+    <div class="feedusername"> <a class="feedlink" href="/profile/<%=post.user_id %>"><%= post.user.username %></a>  </div>
     <div class="postpagestuff">  <%= post.content %> </div>
 
   <% end %>

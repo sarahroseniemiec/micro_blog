@@ -1,15 +1,20 @@
 <h1>Sign up</h1>
 
 <form class="signupform" action="/sign-up" method="post">
-  <input type="text" name="username" value="" placeholder="username">
+  <label for="username">Username</label>
   <br>
-  <input type="password" name="password" value="" placeholder="password">
+  <input class="signupinput" type="text" name="username" value="">
   <br>
-  <label for="state">State/Province</label>
-  <input type="text" name="state" value="">
+  <label for="password">Password</label>
+  <br>
+  <input class="signupinput" type="password" name="password" value="">
+  <br>
+  <label for="state">State/Province</label> <br>
+  <input class="signupinput" type="text" name="state" value="">
   <br>
   <label for="country">Country</label>
-  <input type="text" name="country" value="">
+  <br>
+  <input class="signupinput" type="text" name="country" value="">
   <br>
   <button type="submit" name="button">sign up</button>
 </form>
