@@ -1,30 +1,34 @@
-<p class="editheading">Edit Profile</p>
+<div class="ecenter">
+  <div class="editprofbackground">
+    <p class="editheading">Edit Profile</p>
+    <form class="updateprofform" action="/update-profile" method="post">
+      <label for="state">State/Province</label>
+      <br>
+      <input type="text" name="state" value="">
+      <br>
+      <label for="country">Country</label>
+      <br>
+      <input type="text" name="country" value="">
+      <br>
+      <button type="submit" name="button">enter</button>
+    </form>
+  </div>
 
-<form class="updateprofform" action="/update-profile" method="post">
-  <label for="state">State/Province</label>
-  <br>
-  <input type="text" name="state" value="">
-  <br>
-  <label for="country">Country</label>
-  <br>
-  <input type="text" name="country" value="">
-  <br>
-  <button type="submit" name="button">enter</button>
-</form>
-
-<p class="editheading">Edit Account</p>
-
-<form class="updateaccform" action="/change-account" method="post">
-  <label for="username">New Username</label>
-  <br>
-  <input type="text" name="username" value="">
-  <br>
-  <label for="password">New Password</label>
-  <br>
-  <input type="password" name="password" value="">
-  <br>
-  <button type="submit" name="button">enter</button>
-</form>
-<div class="deletecenter">
-  <a id="deleteaccount" href="/delete_account">Delete Account</a>
+  <div class="editprofbackground">
+    <p class="editheading">Edit Account</p>
+    <form class="updateaccform" action="/change-account" method="post">
+      <label for="username">New Username</label>
+      <br>
+      <input type="text" name="username" value="">
+      <br>
+      <label for="password">New Password</label>
+      <br>
+      <input type="password" name="password" value="">
+      <br>
+      <button type="submit" name="button">enter</button>
+    </form>
+    <div class="deletecenter">
+      <a id="deleteaccount" href="/delete_account">Delete Account</a>
+    </div>
+  </div>
 </div>

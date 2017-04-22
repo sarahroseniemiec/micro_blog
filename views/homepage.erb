@@ -11,12 +11,13 @@
 
  <% end %>
 <h1>Home</h1>
-<div class="feedposts">
+<div class="feedcenter">
   <% @feed.reverse.each do |post| %>
-
-    <div class="postpagedate">  <%= post.date %>  </div>
+  <div class="feedposts">
     <div class="feedusername"> <a class="feedlink" href="/profile/<%=post.user_id %>"><%= post.user.username %></a>  </div>
-    <div class="postpagestuff">  <%= post.content %> </div>
-
+    <div class="feedpagedate">  <%= post.date %>  </div>
+    <div class="feedcontent">  <%= post.content %> </div>
+  </div>
+  <br>
   <% end %>
 </div>

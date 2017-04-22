@@ -2,7 +2,6 @@
 body {
   font-family: 'Roboto', sans-serif;
   color: #232323;
-
 }
 
 h1 {
@@ -25,7 +24,7 @@ ul {
 }
 
 #homeicon, #ejecticon, #profileicon, #posticon, #editicon, #signupicon {
-  font-size: 50px;
+  font-size: 60px;
 }
 
 nav {
@@ -83,15 +82,23 @@ button:hover {
 
 /*homepage styles*/
 .signin {
-  text-align: center;
+  top: 0px;
+  position: fixed;
+  z-index: 10;
 }
 
 .feedposts {
   text-align: center;
+  width: 600px;
+  background-color: #e8fffd;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 0 auto;
 }
 
 .feedusername {
   font-size: 25px;
+  display: inline;
 }
 
 .feedlink:hover {
@@ -99,15 +106,32 @@ button:hover {
 }
 
 
+.feedpagedate {
+  margin: 10px;
+  color: #545454;
+  font-size: 20px;
+  display: inline;
 
+}
 
+.feedcontent {
+  margin: 10px;
+  font-size: 30px;
+
+}
+
+.feedcenter {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
 
 
 /*profile styles*/
 
 .profileposts {
   text-align: center;
-  
+
 }
 
 
@@ -124,12 +148,22 @@ button:hover {
 .signupform {
   text-align: center;
   font-size: 20px;
+  padding-top: 40px;
 }
 
 .signupinput {
   margin: 10px;
 }
 
+.signupbackground {
+  background-color: #e8fffd;
+  width: 400px;
+  height:400px;
+  margin: 0 auto;
+  border: 2px solid black;
+
+
+}
 
 
 
@@ -169,6 +203,7 @@ button:hover {
   margin: 10px;
   color: #545454;
   font-size: 20px;
+
 }
 
 .postform {
@@ -185,22 +220,29 @@ ul{
 
 
 /*update page styles*/
+.editprofbackground {
+  background-color: #e8fffd;
+  width: 400px;
+  height:400px;
+  margin: 20px;
+  border: 2px solid black;
+  display: inline-table;
+  text-align: center;
+}
+
+.ecenter {
+  text-align: center;
+}
+
 .editheading {
   text-align: center;
   font-size: 50px;
-}
-
-.updateprofform {
-  text-align: center;
-}
-
-.updateaccform {
-  text-align: center;
+  margin: 30px 20px 20px 20px;
 }
 
 .deletecenter {
   text-align: center;
-  margin: 30px;
+  margin: 20px;
 }
 
 #deleteaccount {
@@ -212,6 +254,10 @@ ul{
 
 #deleteaccount:hover {
   background-color: #ff515d;
+}
+
+input {
+  margin: 10px;
 }
 
 
