@@ -131,6 +131,11 @@ button:hover {
 
 .profileposts {
   text-align: center;
+  width: 600px;
+  background-color: #e8fffd;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 0 auto;
 
 }
 
@@ -191,6 +196,11 @@ button:hover {
 
 .postpageposts {
   text-align: center;
+  width: 600px;
+  background-color: #e8fffd;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 0 auto;
 
 }
 

@@ -7,19 +7,18 @@
   <button type="submit" name="button">post</button>
 </form>
 
-<div class="postpageposts">
-  <% @posts.reverse.each do |post| %>
-  <div class="postpagedate">  <%= post.date %> </div>
-  <div class="postpagestuff"><%= post.content %> </div>
-  <div class="editpostbutts">
-    <span>
-      <a class="editpostbutton" href="/edituserpost/<%=post.id%>"><i class="material-icons">create</i></a>
-    </span>
-    <span>
-      <a class="editpostbutton" href="/delete-post/<%=post.id%>"> <i class="material-icons">delete</i></a>
-    </span>
-</div>
-
-
-  <% end %>
-</div>
+<% @posts.reverse.each do |post| %>
+  <div class="postpageposts">
+    <div class="postpagedate">  <%= post.date %> </div>
+    <div class="postpagestuff"><%= post.content %> </div>
+    <div class="editpostbutts">
+      <span>
+        <a class="editpostbutton" href="/edituserpost/<%=post.id%>"><i class="material-icons">create</i></a>
+      </span>
+      <span>
+        <a class="editpostbutton" href="/delete-post/<%=post.id%>"> <i class="material-icons">delete</i></a>
+      </span>
+    </div>
+  </div>
+  <br>
+<% end %>

@@ -6,10 +6,10 @@
   <%= @profile.country %>
 </div>
 
-
-<div class="profileposts">
-  <% @posts.reverse.each do |post| %>
-  <div class="postpagedate"> <%= post.date %> </div>
-  <div class="postpagestuff"> <%= post.content %> </div>
-  <% end %>
-</div>
+<% @posts.reverse.each do |post| %>
+  <div class="profileposts">
+    <div class="postpagedate"> <%= post.date %> </div>
+    <div class="feedcontent"> <%= post.content %> </div>
+  </div>
+  <br>
+<% end %>
