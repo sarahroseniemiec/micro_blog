@@ -53,19 +53,24 @@ end
 
 post "/sign-up" do
   params.inspect
-  User.create(
-  username: params[:username],
-  password: params[:password]
-  )
-  @user = User.where(username: params[:username]).first
-  session[:user_id] = @user.id
-  flash[:notice] = "Welcome, #{@user.username}!"
-  Profile.create(
-  state: params[:state],
-  country: params[:country],
-  user_id: session[:user_id]
-  )
-  redirect "/"
+  if User.find_by(username:params[:username])
+      flash[:notice] = "That username already exists please choose a different username"
+      redirect "/sign_up"
+    else
+      User.create(
+      username: params[:username],
+      password: params[:password]
+      )
+      @user = User.where(username: params[:username]).first
+      session[:user_id] = @user.id
+      flash[:notice] = "Welcome, #{@user.username}!"
+      Profile.create(
+      state: params[:state],
+      country: params[:country],
+      user_id: session[:user_id]
+      )
+      redirect "/"
+  end
 end
 
 post "/create-post" do
@@ -94,11 +99,17 @@ end
 post "/change-account" do
   params.inspect
   @userupdate = User.find(session[:user_id])
-  @userupdate.update(
-  username: params[:username],
-  password: params[:password]
-  )
-  redirect "/edit"
+  @existinguser = User.find_by(username:params[:username])
+  if @existinguser != @userupdate
+    flash[:notice] = "That username already exists please choose a different username"
+    redirect "/edit"
+  else
+    @userupdate.update(
+    username: params[:username],
+    password: params[:password]
+    )
+    redirect "/edit"
+  end
 end
 
 post "/update-profile" do
