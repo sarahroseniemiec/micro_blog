@@ -1,8 +1,10 @@
 <h1>Edit post</h1>
-<div class="editpostdate">
-  <%= @editpost.date %>
-</div>
-<div class="editpostcontent"><%= @editpost.content %>
+<div class="postpageposts">
+  <div class="editpostdate">
+    <%= @editpost.date %>
+  </div>
+  <div class="editpostcontent"><%= @editpost.content %>
+  </div>
 </div>
 <div class="editpostform">
   <form class="" action="/edit-post/<%=@editpost.id%>" method="post">

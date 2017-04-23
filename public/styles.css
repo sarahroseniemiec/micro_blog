@@ -126,6 +126,11 @@ button:hover {
   text-align: center;
 }
 
+#mainimage {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 
 /*profile styles*/
 
@@ -146,6 +151,9 @@ button:hover {
   margin-bottom: 30px;
 }
 
+.profimage {
+  text-align: center;
+}
 
 
 /*sign up*/
@@ -169,16 +177,6 @@ button:hover {
 
 
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -274,6 +272,7 @@ input {
 /*edit post style*/
 .editpostform {
   text-align: center;
+  margin: 20px;
 }
 
 .editpostdate {
