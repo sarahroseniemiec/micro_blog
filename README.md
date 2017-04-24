@@ -14,8 +14,6 @@ Run `bundle` to install required gems and then run `rake db:migrate` to setup da
 
 ## License
 
-Copyright (c) 2017 Sarah Niemiec, Hunter Severini & Bradford Goodpasture
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
